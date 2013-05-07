@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alias: MyString
+  email: MyString
+  post_anonymously: false
+
+two:
+  alias: MyString
+  email: MyString
+  post_anonymously: false
