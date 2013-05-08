@@ -3,10 +3,10 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.text :content
-      t.references :author_id
+      t.references :author
 
       t.timestamps
     end
-    add_index :posts, :author_id_id
+    add_index :posts, :author_id
   end
 end

@@ -35,23 +35,23 @@ ActiveRecord::Schema.define(:version => 20130507220145) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
-    t.integer  "post_id_id"
-    t.integer  "commenter_id_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  add_index "comments", ["commenter_id_id"], :name => "index_comments_on_commenter_id_id"
-  add_index "comments", ["post_id_id"], :name => "index_comments_on_post_id_id"
-
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "author_id_id"
+    t.integer  "post_id"
+    t.integer  "commenter_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
 
-  add_index "posts", ["author_id_id"], :name => "index_posts_on_author_id_id"
+  add_index "comments", ["commenter_id"], :name => "index_comments_on_commenter_id"
+  add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "author_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "posts", ["author_id"], :name => "index_posts_on_author_id"
 
 end
